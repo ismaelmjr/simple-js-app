@@ -5,22 +5,73 @@ body {
   font-size: 16px;
   color: whitesmoke;
   font-family: 'Press Start 2P', cursive;
+  text-align: center;
 }
 
 .title {
-  font-size: 1.5em;
+  font-size: 2.5em;
   text-align: center;
   padding: 20px;
 }
 
-.border {
-  border: 3px solid whitesmoke;
-  border-radius: 2px;
+.container {
+  background-color: black;
+  border: solid 10px whitesmoke;
+  display: flex;
+  justify-content: center;
+  margin: 10px;
 }
 
-.container {
-  margin: 0 auto;
-  width: 800px;
+.button {
+  font-size: 1.3em;
   padding: 10px;
-  background-color: black;
+  margin: 10px 0;
+  background-color: whitesmoke;
+  color: black;
+  border: solid black 2px;
+  border-radius: 5px;
+  height: 50px;
+  width: 80%;
 }
+
+/* List Styles */
+
+ul li {
+  list-style-type: none;
+  display: inline-block;
+}
+
+.pokemon-list {
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+/* Media Queries */
+
+@media all and (min-width: 768px) {
+  .pokemon-list {
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
+
+  .button {
+    width: 230px;
+  }
+}
+
+@media all and (min-width: 1024px) {
+  .button {
+    width: 300px;
+  }
+}
+
+@media all and (min-width: 1440px) {
+  .button {
+    width: 400px;
+  }
+}
+
+
+
