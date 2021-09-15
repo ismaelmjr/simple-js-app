@@ -15,67 +15,36 @@ let pokemonRepository = (function () {
     return pokemonList.push(item);
   }
 
+  function addListItem(pokemon) {
+    let unOrderedList = document.querySelector('ul');
+    let listItem = document.createElement('li');
+    let button = document.createElement('button');
+    button.innerText = pokemon.name;
+
+    button.classList.add('button');
+    listItem.appendChild(button);
+    unOrderedList.appendChild(listItem);
+
+    addEventListener(button, pokemon);
+  }
+
+  function showDetails(pokemon) {
+    console.log(pokemon);
+  }
+
+  function addEventListener(button, pokemon) {
+    button.addEventListener('click', function () {
+      showDetails(pokemon.name);
+    });
+  }
   return {
     getAll: getAll,
     add: add,
+    addListItem: addListItem,
   };
 })();
 
 // Create a loop using the forEach predifined function to iterate through the array list within the pokemon repository created above. Only rechable by calling the function getAll(); within the line of code.
 pokemonRepository.getAll().forEach(function (pokemon) {
-  let pokemonName = pokemon.name;
-  let pokemonHeight = pokemon.height;
-
-  if (pokemonHeight >= 7) {
-    document.write(
-      '<p>' +
-        pokemonName +
-        ' ' +
-        '(Height: ' +
-        pokemonHeight +
-        ')' +
-        " - Wow that's big!" +
-        '</p>'
-    );
-    console.log(
-      pokemonName +
-        ' ' +
-        '(Height: ' +
-        pokemonHeight +
-        ')' +
-        " - Wow that's big!"
-    );
-  } else {
-    document.write(
-      '<p>' + pokemonName + ' ' + '(Height: ' + pokemonHeight + ')' + '</p>'
-    );
-    console.log(pokemonName + ' ' + '(Height: ' + pokemonHeight + ')');
-  }
+  pokemonRepository.addListItem(pokemon);
 });
-
-// Created a for loop to iterate through the pokemon list.
-// Added a conditional within the loop to display the pokemon with a height
-// greater than 7.
-
-// for (let i = 0; i < pokemonList.length; i++) {
-//   // Created variables containing each pokemon height and name.
-//   let pokemonName = pokemonList[i].name;
-//   let pokemonHeight = pokemonList[i].height;
-
-//   if (pokemonHeight >= 7) {
-//     document.write(
-//       '<p>' +
-//         pokemonName +
-//         ' ' +
-//         '(Height: ' +
-//         pokemonHeight +
-//         ')' +
-//         " - Wow that's big!" +
-//         '</p>'
-//     );
-//   } else {
-//     document.write(
-//       '<p>' + pokemonName + ' ' + '(Height: ' + pokemonHeight + ')' + '</p>'
-//     );
-//   }
-// }
