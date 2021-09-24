@@ -35,6 +35,85 @@ body {
   cursor: pointer;
 }
 
+/* Modal Styles */
+
+#modal-container {
+  position: fixed;
+  padding: 20px;
+  box-sizing: border-box;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+
+  /* to show it above other content */
+  z-index: 999;
+
+  /* to allow scrolling if the screen is not high enough*/
+  overflow: auto;
+
+  /* this is used to center the modal */
+  display: grid;
+  text-align: center;
+}
+
+.modal {
+  margin: auto;
+  display: inline-block;
+  box-sizing: border-box;
+  background: black;
+  padding: 15px;
+  width: 100%;
+  max-width: 500px;
+  text-align: left;
+  border: 2px solid whitesmoke;
+}
+
+.modal-close {
+  float: right;
+  -webkit-appearance: none;
+  border: 0;
+  background: none;
+  color: whitesmoke;
+  text-decoration: underline;
+  cursor: pointer;
+  padding-bottom: 25px;
+  font-size: 1.1rem;
+}
+
+.modal h1 {
+  font-size: 1.5rem;
+  margin-top: 0;
+  color: whitesmoke;
+  padding-bottom: 10px;
+}
+
+.modal p {
+  margin-bottom: 0;
+  color: whitesmoke;
+  padding-bottom: 10px;
+}
+
+.pokemon-name {
+  text-transform: capitalize;
+}
+
+#modal-container {
+  display: none;
+}
+
+#modal-container.is-visible {
+  /* CSS for modal container - add your own desired CSS styles here */
+  display: block;
+}
+
+.content-image {
+  height: 150px;
+  width: 100%;
+  padding: 10px;
+}
+
 /* List Styles */
 
 ul li {
