@@ -33,6 +33,7 @@ body {
   height: 50px;
   width: 80%;
   cursor: pointer;
+  text-transform: capitalize;
 }
 
 /* Modal Styles */
@@ -55,11 +56,9 @@ body {
 
   /* this is used to center the modal */
   display: grid;
-  text-align: center;
 }
 
 .modal {
-  margin: auto;
   display: inline-block;
   box-sizing: border-box;
   background: black;
@@ -96,6 +95,10 @@ body {
 }
 
 .pokemon-name {
+  text-transform: capitalize;
+}
+
+.pokemon-type {
   text-transform: capitalize;
 }
 
