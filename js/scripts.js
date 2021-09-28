@@ -62,7 +62,7 @@ let pokemonRepository = (function () {
     let contentElement = document.createElement('p');
     contentElement.innerText = 'Height: ' + pokemon.height;
 
-    // created an array to story the type objects.
+    // created an array to store the type objects.
     let pokemonTypes = [];
 
     //Looped through the type array using for each.
@@ -142,7 +142,7 @@ let pokemonRepository = (function () {
       });
   }
 
-  //Created a function promis to load the pokemon deatils from an external api.
+  //Created a function promise to load the pokemon deatils from an external api.
   function loadDetails(item) {
     let url = item.detailsUrl;
     return fetch(url)
