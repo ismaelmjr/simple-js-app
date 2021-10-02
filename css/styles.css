@@ -1,158 +1,41 @@
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 
 body {
-  background-color: darkred;
   font-size: 16px;
-  color: whitesmoke;
   font-family: 'Press Start 2P', cursive;
   text-align: center;
-}
-
-.title {
-  font-size: 2.5em;
-  text-align: center;
-  padding: 20px;
-}
-
-.container {
-  background-color: black;
-  border: solid 10px whitesmoke;
-  display: flex;
-  justify-content: center;
-  margin: 10px;
-}
-
-.button {
-  font-size: 1.3em;
-  padding: 10px;
-  margin: 10px 0;
-  background-color: whitesmoke;
-  color: black;
-  border: solid black 2px;
-  border-radius: 5px;
-  height: 50px;
-  width: 80%;
-  cursor: pointer;
-  text-transform: capitalize;
+  background-color: darkred;
 }
 
 /* Modal Styles */
 
-#modal-container {
-  position: fixed;
-  padding: 20px;
-  box-sizing: border-box;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.5);
-
-  /* to show it above other content */
-  z-index: 999;
-
-  /* to allow scrolling if the screen is not high enough*/
-  overflow: auto;
-
-  /* this is used to center the modal */
-  display: grid;
-}
-
-.modal {
-  display: inline-block;
-  box-sizing: border-box;
-  background: black;
-  padding: 15px;
-  width: 100%;
-  max-width: 500px;
-  text-align: left;
-  border: 2px solid whitesmoke;
-}
-
-.modal-close {
-  float: right;
-  -webkit-appearance: none;
-  border: 0;
-  background: none;
-  color: whitesmoke;
-  text-decoration: underline;
-  cursor: pointer;
-  padding-bottom: 25px;
-  font-size: 1.1rem;
-}
-
-.modal h1 {
-  font-size: 1.5rem;
-  margin-top: 0;
-  color: whitesmoke;
-  padding-bottom: 10px;
-}
-
-.modal p {
-  margin-bottom: 0;
-  color: whitesmoke;
-  padding-bottom: 10px;
-}
-
-.pokemon-name {
-  text-transform: capitalize;
-}
-
+.pokemon-name,
+.modal-title,
 .pokemon-type {
   text-transform: capitalize;
 }
 
-#modal-container {
-  display: none;
-}
+/* NavBar Styles */
 
-#modal-container.is-visible {
-  /* CSS for modal container - add your own desired CSS styles here */
-  display: block;
-}
-
-.content-image {
-  height: 150px;
-  width: 100%;
-  padding: 10px;
+.navbar-collapse {
+  justify-content: flex-end;
 }
 
 /* List Styles */
 
-ul li {
-  list-style-type: none;
-  display: inline-block;
-}
-
-.pokemon-list {
+.unstyled-list {
   padding: 0;
-  display: flex;
-  flex-direction: column;
+}
+
+.list-group-item {
+  border: none;
+  background-color: transparent;
+}
+
+/* Button Styles */
+.button-styles {
+  background-color: whitesmoke;
+  color: black;
+  text-transform: capitalize;
   width: 100%;
-}
-
-/* Media Queries */
-
-@media all and (min-width: 768px) {
-  .pokemon-list {
-    flex-direction: row;
-    justify-content: space-evenly;
-    flex-wrap: wrap;
-  }
-
-  .button {
-    width: 230px;
-  }
-}
-
-@media all and (min-width: 1024px) {
-  .button {
-    width: 300px;
-  }
-}
-
-@media all and (min-width: 1440px) {
-  .button {
-    width: 400px;
-  }
 }
