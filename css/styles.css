@@ -11,11 +11,25 @@ body {
 
 .pokemon-name,
 .modal-title,
-.pokemon-type {
+.pokemon-type,
+.pokemon-ability {
   text-transform: capitalize;
 }
 
+.pokemon-type,
+.pokemon-height,
+.pokemon-ability,
+.pokemon-weight {
+  text-align: left;
+}
+
+.img-fluid {
+  margin-bottom: 30px;
+}
 /* NavBar Styles */
+.navbar {
+  margin-bottom: 20px;
+}
 
 .navbar-collapse {
   justify-content: flex-end;

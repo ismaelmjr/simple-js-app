@@ -6,6 +6,22 @@ let pokemonRepository = (function () {
   // create a variable with the external api link.
   let apiUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=150';
 
+  let filter = document.querySelector('#filter');
+
+  //Filter Pokemon event
+  filter.addEventListener('input', function () {
+    let pokemons = document.querySelectorAll('.list-group-item');
+    let value = filter.value.toLowerCase();
+
+    pokemons.forEach(function (pokemon) {
+      if (pokemon.innerText.toLowerCase().indexOf(value) > -1) {
+        pokemon.style.display = '';
+      } else {
+        pokemon.style.display = 'none';
+      }
+    });
+  });
+
   //Get all function returns the pokemonlist array.
   function getAll() {
     return pokemonList;
@@ -62,7 +78,8 @@ let pokemonRepository = (function () {
     titleElement.innerText = pokemon.name;
 
     let pokemonHeight = document.createElement('p');
-    pokemonHeight.innerText = 'Heigth: ' + pokemon.height;
+    pokemonHeight.classList.add('pokemon-height');
+    pokemonHeight.innerText = 'Heigth:' + pokemon.height;
 
     let pokemonImage = document.createElement('img');
     pokemonImage.classList.add('img-fluid');
@@ -78,11 +95,28 @@ let pokemonRepository = (function () {
 
     let pokemonType = document.createElement('p');
     pokemonType.classList.add('pokemon-type');
-    pokemonType.innerText = 'Types: ' + pokemonTypes;
+    pokemonType.innerText = 'Type: ' + pokemonTypes;
 
+    //created an array to store abilities.
+    let pokemonAbilities = [];
+
+    Object.keys(pokemon.abilities).forEach((key) => {
+      pokemonAbilities.push(pokemon.abilities[key].ability.name);
+    });
+
+    let pokemonAbility = document.createElement('p');
+    pokemonAbility.classList.add('pokemon-ability');
+    pokemonAbility.innerText = 'Abilities: ' + pokemonAbilities;
+
+    let pokemonWeight = document.createElement('p');
+    pokemonWeight.classList.add('pokemon-weight');
+    pokemonWeight.innerText = 'Weight: ' + pokemon.weight;
+
+    modalBody.appendChild(pokemonImage);
+    modalBody.appendChild(pokemonWeight);
     modalBody.appendChild(pokemonHeight);
     modalBody.appendChild(pokemonType);
-    modalBody.appendChild(pokemonImage);
+    modalBody.appendChild(pokemonAbility);
   }
 
   //Created a function promise to load the pokemon list by fetching it from an external api.
@@ -116,6 +150,8 @@ let pokemonRepository = (function () {
         item.imageUrl = details.sprites.other.dream_world.front_default;
         item.height = details.height;
         item.type = details.types;
+        item.abilities = details.abilities;
+        item.weight = details.weight;
       })
       .catch(function (e) {
         console.error(e);

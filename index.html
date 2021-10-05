@@ -11,11 +11,11 @@
       integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="dist/styles.css" />
   </head>
   <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-      <a class="navbar-brand" href="#">Pokedex</a>
+      <a class="navbar-brand" id="pokedex" href="#pokedex">Pokedex</a>
       <button
         class="navbar-toggler"
         type="button"
@@ -32,13 +32,11 @@
         <form class="form-inline my-2 my-lg-0">
           <input
             class="form-control mr-sm-2"
+            id="filter"
             type="search"
-            placeholder="Search"
-            aria-label="Search"
+            placeholder="Search pokemon.."
+            aria-label="Search pokemon.."
           />
-          <button class="btn btn-outline-danger my-2 my-sm-0" type="submit">
-            Search
-          </button>
         </form>
       </div>
     </nav>
@@ -101,6 +99,6 @@
     ></script>
     <script src="js/promise-polyfill.js"></script>
     <script src="js/fetch-polyfill.js"></script>
-    <script src="js/scripts.js"></script>
+    <script src="dist/code.min.js"></script>
   </body>
 </html>
