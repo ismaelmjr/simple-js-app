@@ -13,5 +13,5 @@ On user action by clicking on a list item, view details for that item.
 Technologies Used:
 HTML
 CSS
-Vanila JavaScript
+Vanilla JavaScript
 Bootstrap
